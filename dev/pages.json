@@ -1,0 +1,12 @@
+{
+  "name": "figma2",
+  "pages": [
+    {
+      "slug": "home",
+      "label": "Modish",
+      "file": "index.html",
+      "w": 1920,
+      "h": 6053
+    }
+  ]
+}
