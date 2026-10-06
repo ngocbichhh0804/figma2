@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "figma2-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "dev/serve.py",
+        "3000"
+      ],
+      "port": 3000
+    }
+  ]
+}
