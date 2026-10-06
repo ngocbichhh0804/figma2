@@ -1,0 +1,92 @@
+/* Header nằm đè lên ảnh hero: logo trái, nav giữa, tài khoản phải. */
+@layer components {
+  .site-header {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 2;
+    height: 140px;                           /* [ĐO] đủ chứa 4 dòng nav       */
+    color: var(--text-inverse);              /* [FIGMA] #FFFFFF               */
+  }
+
+  .site-header__logo {
+    position: absolute;
+    top: 29px;                               /* [ĐO] chữ m/d bắt đầu y 40      */
+    left: 100px;                             /* [ĐO] chữ bắt đầu x 101         */
+    font-family: var(--font-logo);
+    font-size: 38px;                         /* [FIGMA] Lora Italic 38         */
+    font-style: italic;
+    line-height: 50px;                       /* [FIGMA] text box 134 × 50      */
+  }
+
+  /* Figma: auto layout space-between trong khung 100 → 1820; nav rộng 69,
+     logo 134, cụm tài khoản 82 ⇒ mép trái nav = 50% − 8.5px. */
+  .site-header__nav {
+    position: absolute;
+    top: 30px;                               /* [ĐO] chữ hoa bắt đầu y 35      */
+    left: calc(50% - 9px);                   /* [ĐO] chữ ABOUT bắt đầu x 951   */
+  }
+
+  .site-header__account {
+    position: absolute;
+    top: 30px;                               /* [ĐO]                          */
+    left: calc(100% - 183px);                /* [ĐO] icon bắt đầu x 1738       */
+  }
+
+  .site-header__list li { padding-bottom: 4px; }   /* [ĐO] bước dòng 24 = 20 + 4 */
+
+  .site-header__link,
+  .site-header__tool {
+    position: relative;
+    display: inline-block;                   /* vạch gạch chân chỉ dài bằng chữ */
+    font-size: 14px;                         /* [FIGMA] Jost 14                */
+    line-height: 20px;                       /* [FIGMA] Hug 20                 */
+    letter-spacing: var(--tracking-caps);    /* [FIGMA] 10%                    */
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .site-header__link--current { font-weight: var(--weight-medium); }   /* [ĐO] ABOUT đậm 500, rộng 951 → 1001 */
+
+  /* Gạch chân của Figma là nét mảnh khử răng cưa trên 2 hàng pixel:
+     25 % rồi 50 % màu chữ [ĐO], nằm 16px dưới mép trên dòng (y 46–47).
+     text-decoration của Chrome luôn ra 1 hàng đặc nên vẽ bằng ::after. */
+  .site-header__link:hover::after,
+  .site-header__link--current::after,
+  .site-header__tool:hover::after {
+    content: "";
+    position: absolute;
+    top: 16px;                               /* [ĐO] vạch ở y 46–47            */
+    left: 0;
+    right: 0;                                /* [ĐO] vạch dài hết text box     */
+    height: 2px;                             /* [ĐO]                          */
+    background-image: linear-gradient(
+      color-mix(in srgb, currentColor 25%, transparent) 50%,   /* [ĐO] */
+      color-mix(in srgb, currentColor 50%, transparent) 50%    /* [ĐO] */
+    );
+  }
+
+  .site-header__tool {
+    padding-left: 23px;                      /* [FIGMA] Left 23px              */
+  }
+
+  .site-header__tool:hover::after { left: 23px; }
+
+  .site-header__icon {
+    position: absolute;
+    top: 3px;                                /* [FIGMA] Top 3px                */
+    left: 0;
+    width: 14px;                             /* [FIGMA] 14 × 14                */
+    height: 14px;
+  }
+
+  @media (width < 1200px) {
+    .site-header__logo { left: 32px; }
+    .site-header__account { left: auto; right: 32px; }
+  }
+
+  @media (width < 768px) {
+    .site-header__logo { top: 16px; left: 16px; font-size: 30px; }
+    .site-header__nav { top: 72px; left: 16px; }
+    .site-header__account { top: 72px; right: 16px; }
+  }
+}

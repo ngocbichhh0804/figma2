@@ -1,0 +1,79 @@
+/* "Customer's reviews": tiêu đề chìm tràn lề trái, 3 trích dẫn, chấm phân trang. */
+@layer components {
+  .reviews {
+    height: 736px;                           /* [ĐO] 2800 → 3536               */
+    padding-top: 92px;                       /* [ĐO] chữ bắt đầu y 2908        */
+    overflow: clip;
+  }
+
+  .reviews__title {
+    font-kerning: none;                      /* [ĐO] Figma dựng Bodoni Moda không kerning */
+    font-size: 102px;                        /* [ĐO] chữ hoa cao 80–81         */
+    line-height: var(--leading-display);     /* [ƯỚC] 114% như các tiêu đề Bodoni khác */
+    letter-spacing: var(--tracking-display); /* [ƯỚC] 6% như các tiêu đề Bodoni khác */
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--text-ghost);                /* [ĐO] #E8E8E8                   */
+  }
+
+  .reviews__list {
+    display: flow-root;
+    margin-top: 50px;                        /* [ĐO] trích dẫn bắt đầu y 3070  */
+  }
+
+  .reviews__item {
+    float: left;
+    width: calc((100% - 40px) / 3);          /* [ĐO] cột 460, khe 20           */
+    text-align: center;
+  }
+
+  .reviews__item + .reviews__item { margin-left: 20px; }
+
+  .reviews__quote {
+    font-size: 26px;                         /* [ĐO] dòng 2 rộng 436 / 441 / 437 */
+    font-weight: var(--weight-light);        /* [ĐO]                          */
+    line-height: 46px;                       /* [ĐO] bước dòng 46              */
+    letter-spacing: 0.02em;                  /* [ĐO]                          */
+  }
+
+  .reviews__name {
+    margin-top: 30px;                        /* [ĐO] chữ hoa bắt đầu y 3232    */
+    font-size: 18px;                         /* [ĐO] chữ hoa cao 13            */
+    font-weight: var(--weight-bold);         /* [ĐO] tên rộng 187 / 209 / 147  */
+    line-height: 26px;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    padding-left: var(--tracking-caps);      /* bù khoảng chữ thừa sau ký tự cuối */
+  }
+
+  .reviews__dots {
+    margin-top: 70px;                        /* [ĐO] chấm ở y 3322             */
+    font-size: 0;
+    text-align: center;
+  }
+
+  .reviews__dots li { display: inline-block; margin: 0 15px; }  /* [ĐO] bước 44 */
+
+  .reviews__dot {
+    display: block;
+    width: 14px;                             /* [ĐO] Ø14                       */
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--color-silver);   /* [ĐO] #BDBDBD                   */
+  }
+
+  .reviews__dot--active,
+  .reviews__dot:hover { background-color: var(--text-primary); }
+
+  @media (width < 1200px) {
+    .reviews { height: auto; padding-bottom: 120px; }
+    .reviews__title { font-size: 72px; }
+    .reviews__quote { font-size: 18px; line-height: 32px; }
+  }
+
+  @media (width < 768px) {
+    .reviews__title { font-size: 44px; }
+    .reviews__item,
+    .reviews__item + .reviews__item { float: none; width: auto; margin: 0 0 40px; }
+  }
+}

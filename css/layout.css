@@ -1,0 +1,27 @@
+/* Cấu trúc cấp trang: container và lớp trang trí. Không flex/grid/gap. */
+@layer layout {
+  /* [ĐO] nội dung 1420px, lề 250px mỗi bên ở khung 1920. */
+  .container {
+    width: 100%;
+    max-width: 1420px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+
+  .page {
+    --frame-w: 1920px;   /* [FIGMA] khung thiết kế */
+
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+  }
+
+  @media (width >= 48rem) {
+    .container { padding-inline: 32px; }
+  }
+
+  /* Đủ rộng để chứa trọn 1420px → bỏ padding, lề tự ra đúng số Figma. */
+  @media (width >= 1484px) {
+    .container { padding-inline: 0px; }
+  }
+}

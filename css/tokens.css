@@ -1,0 +1,53 @@
+/* =========================================================================
+   Design token — figma2 (Modish)
+
+   File này chỉ chứa giá trị DÙNG CHUNG: bảng màu, font, thang độ đậm, cỡ
+   chữ và leading chung, chuyển động, bo góc. Số đo riêng của từng component
+   ghi thẳng trong file component đó, kèm nhãn nguồn gốc bên cạnh:
+
+   [FIGMA]  đọc thẳng từ panel inspector của Figma
+   [ĐO]     đo từ ảnh export 1:1 của bản thiết kế
+   [MẪU]    lấy từ file asset được cung cấp
+   [ƯỚC]    ước lượng, còn chờ xác nhận lại trong Figma
+   ========================================================================= */
+@layer tokens {
+  :root {
+    /* ---------- Màu: giá trị gốc ---------- */
+    --color-white: #ffffff;          /* [FIGMA] nền trang, chữ trên ảnh      */
+    --color-ink: #111111;            /* [FIGMA] chữ chính, nền footer        */
+    --color-mist: #e8e8e8;           /* [ĐO]    tiêu đề chìm (reviews, subscribe) */
+    --color-silver: #bdbdbd;         /* [ĐO]    mũi tên tắt, chấm tắt        */
+    --color-rule: #d2d2d2;           /* [ĐO]    vạch dưới "Shop all"         */
+    --color-rule-dark: #414141;      /* [ĐO]    vạch chia trong footer       */
+
+    /* ---------- Màu: theo ngữ nghĩa ----------
+       Component chỉ dùng tầng này, nhờ vậy đổi theme chỉ phải sửa ở đây. */
+    --surface-page: var(--color-white);
+    --surface-inverse: var(--color-ink);
+    --text-primary: var(--color-ink);
+    --text-inverse: var(--color-white);
+    --text-ghost: var(--color-mist);
+    --accent-stroke: var(--color-ink);
+
+    /* ---------- Chữ ---------- */
+    --font-display: "Bodoni Moda", "Didot", serif;   /* [FIGMA] Bodoni Moda (OFL) */
+    --font-sans: "Jost", "Futura", sans-serif;       /* [FIGMA] Jost (OFL)        */
+    --font-logo: "Lora", Georgia, serif;             /* [FIGMA] Lora Italic (OFL) */
+
+    --text-body: 14px;                 /* [FIGMA] cỡ nav, nút, link    */
+    --tracking-caps: 0.1em;            /* [FIGMA] letter-spacing 10%   */
+    --tracking-display: 0.06em;        /* [FIGMA] letter-spacing 6%    */
+    --leading-display: 1.14;           /* [FIGMA] line-height 114%     */
+
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* ---------- Hình khối, chuyển động ---------- */
+    --radius-pill: 999px;
+    --duration-fast: 160ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}

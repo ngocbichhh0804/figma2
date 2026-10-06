@@ -1,0 +1,62 @@
+# Vùng đối chiếu trang Modish (home). Toạ độ khung 1920 × 6053.
+# tên          x0,y0,x1,y1          tuỳ chọn
+logo           80,25,260,85          thr=170 light
+nav-about      940,30,1020,50        thr=170 light
+nav-shop       940,54,1020,74        thr=170 light
+nav-sale       940,78,1020,98        thr=170 light
+nav-articles   940,102,1030,122      thr=170 light
+acc-login      1730,28,1830,50       thr=170 light
+acc-search     1730,54,1830,74       thr=170 light
+acc-wish       1730,78,1830,98       thr=170 light
+acc-cart       1730,102,1830,122     thr=170 light
+hero-title     420,250,1150,560      thr=200 light rows
+hero-btn       440,580,730,650       thr=250 light
+hero-btn-text  462,596,700,632
+women-title    260,1250,700,1370     thr=250 light
+women-btn      340,1375,620,1440     thr=252 light
+women-btn-text 372,1388,577,1426
+men-title      1320,1250,1580,1370   thr=250 light
+men-btn        1330,1375,1560,1440   thr=252 light
+men-btn-text   1356,1388,1534,1426
+new-title      230,1940,760,2010
+shop-all       1580,1950,1690,1975
+shop-all-line  1580,1977,1690,1990   thr=240
+arrow-prev     30,2250,200,2400      thr=200
+arrow-next     1720,2250,1900,2400
+products-img   240,2020,1680,2662    thr=250
+p1-name        255,2662,480,2700
+p1-price       600,2662,715,2700
+p2-name        730,2662,960,2700
+p2-price       1080,2662,1192,2700
+p3-name        1205,2662,1470,2700
+p3-price       1560,2662,1668,2700
+reviews-title  0,2880,1300,3000      thr=245
+quote-1        240,3050,715,3200     rows
+quote-2        720,3050,1200,3200    rows
+quote-3        1200,3050,1680,3200   rows
+name-1         240,3220,715,3260
+name-2         720,3220,1200,3260
+name-3         1200,3220,1680,3260
+dots           880,3300,1040,3350    thr=240
+video          0,3500,1920,4350      thr=250
+play           810,3780,1110,4080    thr=250 light
+play-icon      900,3880,1020,3980    thr=60
+news-title     240,4520,700,4570
+read-all       1580,4530,1690,4550
+read-all-line  1580,4551,1690,4565   thr=240
+news-img       240,4590,1680,4926    thr=250
+news-cap-1     255,4928,720,4960
+news-cap-2     735,4928,1195,4960
+news-cap-3     1215,4928,1670,4960
+subscribe-title 500,5150,1420,5270   thr=245
+email-box      540,5290,1380,5370    thr=100
+placeholder    570,5308,1090,5350
+subscribe-text 1110,5310,1350,5350   thr=150 light
+footer-top     0,5500,1920,5600      thr=40
+footer-logo    230,5740,420,5820     thr=150 light
+footer-nav     570,5750,700,5880     thr=150 light rows
+footer-help    840,5750,1000,5880    thr=150 light rows
+footer-contact 1150,5750,1420,5880   thr=150 light rows
+footer-social  1570,5750,1700,5880   thr=150 light rows
+footer-rule    0,5960,1920,5985      thr=25 light
+copyright      700,5995,1220,6040    thr=150 light

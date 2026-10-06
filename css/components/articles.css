@@ -1,0 +1,46 @@
+/* "News articles": 3 thẻ bài viết. */
+@layer components {
+  .articles {
+    height: 682px;                           /* [ĐO] 4318 → 5000               */
+    padding-top: 200px;                      /* [ĐO] text box tiêu đề ở y 4518 */
+  }
+
+  .articles__list { display: flow-root; }
+
+  .articles__card {
+    float: left;
+    width: calc((100% - 40px) / 3);          /* [MẪU] ảnh 460, khe 20          */
+  }
+
+  .articles__card + .articles__card { margin-left: 20px; }
+
+  .articles__img {
+    width: 100%;
+    height: 320px;                           /* [MẪU] ảnh 460 × 320            */
+    object-fit: cover;
+  }
+
+  .articles__title {
+    margin-top: 5px;                         /* [ĐO] chữ hoa bắt đầu y 4934    */
+    padding-left: 10px;                      /* [ĐO] chữ bắt đầu x 262         */
+    font-family: var(--font-sans);
+    font-size: 20px;                         /* [ĐO] chữ hoa cao 14            */
+    line-height: 28px;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+  }
+
+  .articles__link:hover .articles__title { text-decoration: underline; }
+
+  @media (width < 1200px) {
+    .articles { height: auto; padding-top: 120px; }
+    .articles__img { height: auto; aspect-ratio: 460 / 320; }
+    .articles__title { font-size: 16px; }
+  }
+
+  @media (width < 768px) {
+    .articles { padding-top: 80px; }
+    .articles__card,
+    .articles__card + .articles__card { float: none; width: auto; margin: 0 0 32px; }
+  }
+}

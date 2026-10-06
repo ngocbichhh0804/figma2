@@ -1,0 +1,75 @@
+/* "Subscribe us": tiêu đề chìm + ô email liền nút. */
+@layer components {
+  .subscribe {
+    height: 556px;                           /* [ĐO] 5000 → 5556               */
+    padding-top: 156px;                      /* [ĐO] chữ bắt đầu y 5173        */
+    text-align: center;
+  }
+
+  .subscribe__title {
+    font-kerning: none;                      /* [ĐO] Figma dựng Bodoni Moda không kerning */
+    font-size: 102px;                        /* [ĐO] chữ hoa cao 80–81         */
+    line-height: var(--leading-display);     /* [ƯỚC] 114% như các tiêu đề Bodoni khác */
+    letter-spacing: var(--tracking-display); /* [ƯỚC] 6% như các tiêu đề Bodoni khác */
+    padding-left: 0.04em;                    /* [ĐO] bù khoảng chữ thừa sau ký tự cuối */
+    text-transform: uppercase;
+    color: var(--text-ghost);                /* [ĐO] #E8E8E8                   */
+  }
+
+  .subscribe__form {
+    display: flow-root;
+    width: 794px;                            /* [ĐO] 563 → 1357                */
+    max-width: calc(100% - 32px);
+    margin: 30px auto 0;                     /* [ĐO] ô ở y 5302                */
+  }
+
+  .subscribe__input {
+    float: left;
+    width: calc(100% - 259px);               /* [ĐO] 535                       */
+    height: 54px;                            /* [ĐO]                          */
+    padding: 0 0 2px 25px;                   /* [ĐO] chữ bắt đầu x 592, y 5319 */
+    font-size: 20px;                         /* [ĐO]                          */
+    font-weight: var(--weight-light);
+    letter-spacing: 0.01em;                  /* [ĐO] placeholder rộng 264      */
+    border: 1px solid var(--text-primary);   /* [ĐO] viền 1px #111111          */
+    border-radius: 0;
+    background-color: var(--color-white);
+  }
+
+  /* Figma không dùng Jost Italic thật mà nghiêng chữ đứng (italic giả): chữ
+     "a", "e", "d" mang dáng chữ đứng. Dùng họ "Jost Upright" (chỉ có mặt
+     đứng) để trình duyệt cũng nghiêng giả, khớp từng nét. */
+  .subscribe__input::placeholder {
+    font-family: "Jost Upright", var(--font-sans);
+    font-weight: 285;                        /* [ĐO] Light của Figma dựng mảnh hơn 300 */
+    font-style: oblique 14deg;               /* [ĐO] góc nghiêng giả của Figma */
+    color: var(--text-primary);              /* [ĐO] #111111                   */
+    opacity: 1;
+  }
+
+  .subscribe__btn {
+    float: left;
+    width: 259px;                            /* [ĐO] 1098 → 1357               */
+    height: 54px;
+    padding-left: var(--tracking-caps);      /* bù khoảng chữ thừa sau ký tự cuối */
+    font-size: 14px;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--text-inverse);
+    background-color: var(--surface-inverse);   /* [ĐO] #111111 */
+  }
+
+  .subscribe__btn:hover { background-color: #333333; }   /* [ƯỚC] trạng thái hover */
+
+  @media (width < 1200px) {
+    .subscribe { height: auto; padding: 120px 0; }
+    .subscribe__title { font-size: 72px; }
+  }
+
+  @media (width < 768px) {
+    .subscribe__title { font-size: 44px; }
+    .subscribe__input,
+    .subscribe__btn { float: none; width: 100%; }
+    .subscribe__btn { margin-top: 8px; }
+  }
+}

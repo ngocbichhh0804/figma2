@@ -1,0 +1,55 @@
+/* Hai ô Women / Men, mỗi ô một nửa khung, cách nhau 20px. */
+@layer components {
+  .category {
+    display: flow-root;
+    margin-top: 20px;                        /* [ĐO] ảnh bắt đầu y 946         */
+    color: var(--text-inverse);
+  }
+
+  .category__item {
+    position: relative;
+    float: left;
+    width: calc(50% - 10px);                 /* [ĐO] 950 = (1920 − 20) / 2     */
+  }
+
+  .category__item--men { float: right; }
+
+  .category__img {
+    width: 100%;
+    height: 798px;                           /* [MẪU] Women.png 950 × 798      */
+    object-fit: cover;
+  }
+
+  .category__body {
+    position: absolute;
+    top: 319px;                              /* [ĐO] chữ hoa bắt đầu y 1281    */
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .category__title {
+    margin-bottom: 19px;                     /* [ĐO] nút ở y 1387              */
+    font-kerning: none;                      /* [ĐO] Figma dựng Bodoni Moda không kerning */
+    font-size: 90px;                         /* [FIGMA] Bodoni Moda 90         */
+    line-height: var(--leading-display);     /* [FIGMA] 114% → Hug 103         */
+    letter-spacing: var(--tracking-display); /* [FIGMA] 6%                     */
+    padding-left: var(--tracking-display);   /* bù khoảng chữ thừa sau ký tự cuối */
+    text-transform: uppercase;
+  }
+
+  @media (width < 1200px) {
+    .category__img { height: 600px; }
+    .category__body { top: 200px; }
+    .category__title { font-size: 72px; }
+  }
+
+  @media (width < 768px) {
+    .category__item,
+    .category__item--men { float: none; width: auto; }
+    .category__item + .category__item { margin-top: 20px; }
+    .category__img { height: 480px; }
+    .category__body { top: 150px; }
+    .category__title { font-size: 64px; margin-bottom: 20px; }
+  }
+}

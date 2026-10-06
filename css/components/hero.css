@@ -1,0 +1,39 @@
+/* Hero: ảnh nền full khung, tiêu đề H1 + nút. */
+@layer components {
+  .hero {
+    position: relative;
+    height: 926px;                           /* [MẪU] bg.png 1920 × 926        */
+    color: var(--text-inverse);
+    background: var(--surface-inverse) url("../../assets/img/bg.png") center top / cover no-repeat;
+  }
+
+  .hero__body {
+    position: absolute;
+    top: 267px;                              /* [ĐO] chữ T bắt đầu y 289       */
+    left: calc(50% - 500px);                 /* [ĐO] khối chữ + nút bắt đầu x 460 */
+  }
+
+  .hero__title {
+    max-width: 654px;                        /* [FIGMA] text box 654 × 278 → ép 2 dòng */
+    font-kerning: none;                      /* [ĐO] Figma dựng Bodoni Moda không kerning */
+    font-size: 122px;                        /* [FIGMA] Bodoni Moda 122        */
+    line-height: var(--leading-display);     /* [FIGMA] 114%                   */
+    letter-spacing: var(--tracking-display); /* [FIGMA] 6%                     */
+    text-transform: uppercase;
+  }
+
+  .hero__btn { margin-top: 49px; }           /* [ĐO] nút ở y 594               */
+
+  @media (width < 1200px) {
+    .hero { height: 760px; }
+    .hero__body { top: 240px; left: 32px; }
+    .hero__title { font-size: 96px; max-width: 520px; }
+  }
+
+  @media (width < 768px) {
+    .hero { height: 600px; background-position: 70% top; }
+    .hero__body { top: auto; bottom: 64px; left: 16px; right: 16px; }
+    .hero__title { font-size: clamp(48px, 15vw, 72px); max-width: none; }
+    .hero__btn { margin-top: 24px; }
+  }
+}

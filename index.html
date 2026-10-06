@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modish — True classics</title>
+    <meta name="description" content="Modish: timeless clothing for women and men. New arrivals, customer reviews and fashion articles." />
+
+    <!-- Thứ tự layer khai báo một lần; nhờ vậy không cần !important. -->
+    <style>
+      @layer reset, tokens, base, layout, components, utilities;
+    </style>
+
+    <!-- Font hiện ngay màn hình đầu -->
+    <link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/bodoni-moda-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/lora-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/btn.css" />
+    <link rel="stylesheet" href="css/components/site-header.css" />
+    <link rel="stylesheet" href="css/components/hero.css" />
+    <link rel="stylesheet" href="css/components/category.css" />
+    <link rel="stylesheet" href="css/components/section-head.css" />
+    <link rel="stylesheet" href="css/components/products.css" />
+    <link rel="stylesheet" href="css/components/reviews.css" />
+    <link rel="stylesheet" href="css/components/video.css" />
+    <link rel="stylesheet" href="css/components/articles.css" />
+    <link rel="stylesheet" href="css/components/subscribe.css" />
+    <link rel="stylesheet" href="css/components/site-footer.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Khung Figma "Modish": 1920 × 6053 -->
+    <div class="page page--home">
+      <header class="site-header">
+        <a class="site-header__logo" href="index.html">modish.</a>
+
+        <nav class="site-header__nav" aria-label="Main">
+          <ul class="site-header__list">
+            <li><a class="site-header__link site-header__link--current" href="#" aria-current="page">About</a></li>
+            <li><a class="site-header__link" href="#">Shop</a></li>
+            <li><a class="site-header__link" href="#">Sale</a></li>
+            <li><a class="site-header__link" href="#">Articles</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-header__account" aria-label="Account">
+          <ul class="site-header__list">
+            <li><a class="site-header__tool" href="#"><img class="site-header__icon" src="assets/icon/ion_person.png" alt="" width="14" height="14" />Login</a></li>
+            <li><a class="site-header__tool" href="#"><img class="site-header__icon" src="assets/icon/ion_search.png" alt="" width="14" height="14" />Search</a></li>
+            <li><a class="site-header__tool" href="#"><img class="site-header__icon" src="assets/icon/ion_heart.png" alt="" width="14" height="14" /><span class="visually-hidden">Wishlist </span>(0)</a></li>
+            <li><a class="site-header__tool" href="#"><img class="site-header__icon" src="assets/icon/ion_cart.png" alt="" width="14" height="14" /><span class="visually-hidden">Cart </span>(0)</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero__body">
+            <h1 class="hero__title" id="hero-title">True Classics.</h1>
+            <a class="btn btn--collection hero__btn" href="#">Shop collection</a>
+          </div>
+        </section>
+
+        <section class="category" aria-label="Shop by category">
+          <div class="category__item category__item--women">
+            <img class="category__img" src="assets/img/Women.png" alt="" width="950" height="798" />
+            <div class="category__body">
+              <h2 class="category__title">Women</h2>
+              <a class="btn btn--women" href="#">Shop women</a>
+            </div>
+          </div>
+          <div class="category__item category__item--men">
+            <img class="category__img" src="assets/img/Men.png" alt="" width="950" height="798" />
+            <div class="category__body">
+              <h2 class="category__title">Men</h2>
+              <a class="btn btn--men" href="#">Shop men</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="products" aria-labelledby="products-title">
+          <div class="container">
+            <div class="section-head">
+              <h2 class="section-head__title" id="products-title">New arrival items</h2>
+              <a class="section-head__link section-head__link--shop" href="#">Shop all</a>
+            </div>
+
+            <ul class="products__list">
+              <li class="products__card">
+                <img class="products__img" src="assets/img/pexels-vova-krasilnikov-4903764%201.png" alt="Man in a black bucket hat and oversized black T-shirt" width="466" height="630" />
+                <h3 class="products__name">Oversized T-shirt</h3>
+                <p class="products__price">$22.00</p>
+              </li>
+              <li class="products__card">
+                <img class="products__img" src="assets/img/pexels-jacob-m-4991598.png" alt="Woman in a wide-brim hat and black leather overcoat" width="466" height="630" />
+                <h3 class="products__name">Leather overcoat</h3>
+                <p class="products__price">$99.00</p>
+              </li>
+              <li class="products__card">
+                <img class="products__img" src="assets/img/mike-von-2UTk-Nip5aM-unsplash%201.png" alt="Woman sitting on steps in a black hoody and joggers" width="466" height="630" />
+                <h3 class="products__name">The hundred hoody</h3>
+                <p class="products__price">$22.00</p>
+              </li>
+            </ul>
+          </div>
+
+          <a class="products__arrow products__arrow--prev" href="#" aria-label="Previous items">
+            <svg viewBox="0 0 91 65" width="91" height="65" aria-hidden="true"><path d="M91 32.5H1M33 .5 1 32.5l32 32" fill="none" stroke="currentColor" stroke-width="1.5" /></svg>
+          </a>
+          <a class="products__arrow products__arrow--next" href="#" aria-label="Next items">
+            <svg viewBox="0 0 91 65" width="91" height="65" aria-hidden="true"><path d="M0 32.5h90M58 .5l32 32-32 32" fill="none" stroke="currentColor" stroke-width="1.5" /></svg>
+          </a>
+        </section>
+
+        <section class="reviews" aria-labelledby="reviews-title">
+          <h2 class="reviews__title" id="reviews-title">Customer’s reviews</h2>
+          <div class="container">
+            <ul class="reviews__list">
+              <li class="reviews__item">
+                <blockquote class="reviews__quote">“Neque id risus imperdiet sagittis. Volutpat vitae morbi turpis non porttitor tortor duis potenti eget quis quis.”</blockquote>
+                <p class="reviews__name">Karolina Bielas</p>
+              </li>
+              <li class="reviews__item">
+                <blockquote class="reviews__quote">“Pretium nec tellus duis lorem aliquam. Nibh in dictumst ultricies at nisl tempus. Ipsum molestie nisl eros facilisis.”</blockquote>
+                <p class="reviews__name">Nicholas Charles</p>
+              </li>
+              <li class="reviews__item">
+                <blockquote class="reviews__quote">“Quis morbi non gravida nec leo varius morbi libero urna. Quam ipsum aenean sodales massa at ac amet ullamcorper.”</blockquote>
+                <p class="reviews__name">William Jack</p>
+              </li>
+            </ul>
+            <ol class="reviews__dots" aria-label="Review pages">
+              <li><a class="reviews__dot reviews__dot--active" href="#reviews-title" aria-current="true"><span class="visually-hidden">Page 1</span></a></li>
+              <li><a class="reviews__dot" href="#reviews-title"><span class="visually-hidden">Page 2</span></a></li>
+              <li><a class="reviews__dot" href="#reviews-title"><span class="visually-hidden">Page 3</span></a></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="video" aria-label="Campaign video">
+          <img class="video__img" src="assets/img/Video.png" alt="" width="1920" height="782" />
+          <a class="video__play" href="#"><span class="visually-hidden">Play video</span></a>
+        </section>
+
+        <section class="articles" aria-labelledby="articles-title">
+          <div class="container">
+            <div class="section-head">
+              <h2 class="section-head__title" id="articles-title">News articles</h2>
+              <a class="section-head__link section-head__link--read" href="#">Read all</a>
+            </div>
+
+            <ul class="articles__list">
+              <li class="articles__card">
+                <a class="articles__link" href="#">
+                  <img class="articles__img" src="assets/img/pexels-vova-krasilnikov-4903764%201%20(1).png" alt="" width="460" height="320" />
+                  <h3 class="articles__title">Look classic in every dress.</h3>
+                </a>
+              </li>
+              <li class="articles__card">
+                <a class="articles__link" href="#">
+                  <img class="articles__img" src="assets/img/pexels-vova-krasilnikov-4903764%201%20(2).png" alt="" width="460" height="320" />
+                  <h3 class="articles__title">Best comfortable clothes lists.</h3>
+                </a>
+              </li>
+              <li class="articles__card">
+                <a class="articles__link" href="#">
+                  <img class="articles__img" src="assets/img/pexels-vova-krasilnikov-4903764%201%20(3).png" alt="" width="460" height="320" />
+                  <h3 class="articles__title">Unique fashion trends 2022.</h3>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="subscribe" aria-labelledby="subscribe-title">
+          <h2 class="subscribe__title" id="subscribe-title">Subscribe us</h2>
+          <form class="subscribe__form" action="#" method="post">
+            <label class="visually-hidden" for="subscribe-email">Email address</label>
+            <input class="subscribe__input" id="subscribe-email" type="email" name="email" placeholder="Write your email address here..." autocomplete="email" required />
+            <button class="subscribe__btn" type="submit">Subscribe</button>
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container site-footer__top">
+          <a class="site-footer__logo" href="index.html">modish.</a>
+
+          <nav class="site-footer__col site-footer__col--nav" aria-label="Footer">
+            <ul>
+              <li><a class="site-footer__link site-footer__link--current" href="#">About</a></li>
+              <li><a class="site-footer__link" href="#">Shop</a></li>
+              <li><a class="site-footer__link" href="#">Sale</a></li>
+              <li><a class="site-footer__link" href="#">Articles</a></li>
+            </ul>
+          </nav>
+
+          <nav class="site-footer__col site-footer__col--help" aria-label="Customer service">
+            <ul>
+              <li><a class="site-footer__link" href="#">Track order</a></li>
+              <li><a class="site-footer__link" href="#">Return policy</a></li>
+              <li><a class="site-footer__link" href="#">Shipping</a></li>
+              <li><a class="site-footer__link" href="#">Contact us</a></li>
+            </ul>
+          </nav>
+
+          <address class="site-footer__col site-footer__col--contact">
+            <p>Do you have any queries?<br /><a class="site-footer__contact" href="mailto:templatesjungle@gmail.com">templatesjungle@gmail.com</a></p>
+            <p>If you need support? Give us a call.<br /><a class="site-footer__contact" href="tel:+122334456678">+12 23 34 456 678</a></p>
+          </address>
+
+          <nav class="site-footer__col site-footer__col--social" aria-label="Social media">
+            <ul>
+              <li><a class="site-footer__link" href="#">Facebook</a></li>
+              <li><a class="site-footer__link" href="#">Instagram</a></li>
+              <li><a class="site-footer__link" href="#">Twitter</a></li>
+              <li><a class="site-footer__link" href="#">Pinterest</a></li>
+              <li><a class="site-footer__link" href="#">Youtube</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <p class="site-footer__copy">© 2022 Copyright <a class="site-footer__contact" href="#">TemplatesJungle</a>. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

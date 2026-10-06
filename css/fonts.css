@@ -1,0 +1,55 @@
+/* =========================================================================
+   Font của Figma đều là font mở (SIL OFL) nên dùng đúng font gốc, tự lưu
+   woff2 trong assets/fonts/ chứ không gọi Google Fonts: không phụ thuộc máy
+   chủ ngoài, không gửi IP người xem cho bên thứ ba, chữ hiện sớm hơn.
+   Mỗi file chỉ chứa bảng mã latin.
+
+   Jost         (chữ thân, nav, nút)      → bản variable, trục wght
+   Bodoni Moda  (tiêu đề lớn)             → bản variable, trục opsz + wght
+   Lora Italic  (logo)                    → bản tĩnh 400 italic
+   ========================================================================= */
+@layer reset {
+  @font-face {
+    font-family: "Jost";
+    src: url("../assets/fonts/jost-latin-wght-normal.woff2") format("woff2-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Jost";
+    src: url("../assets/fonts/jost-latin-wght-italic.woff2") format("woff2-variations");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Cùng file chữ đứng nhưng KHÔNG khai báo mặt nghiêng → font-style:
+     oblique sẽ nghiêng giả, giống cách Figma dựng placeholder ô email. */
+  @font-face {
+    font-family: "Jost Upright";
+    src: url("../assets/fonts/jost-latin-wght-normal.woff2") format("woff2-variations");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Trục opsz: trình duyệt tự chọn theo cỡ chữ (font-optical-sizing: auto),
+     giống Figma — chữ càng to nét mảnh càng mảnh. */
+  @font-face {
+    font-family: "Bodoni Moda";
+    src: url("../assets/fonts/bodoni-moda-latin-opsz-normal.woff2") format("woff2-variations");
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Lora";
+    src: url("../assets/fonts/lora-latin-400-italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+}

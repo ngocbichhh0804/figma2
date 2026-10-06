@@ -1,0 +1,40 @@
+/* Hàng tiêu đề mục: tiêu đề chữ hoa trái, link gạch chân phải. */
+@layer components {
+  .section-head {
+    display: flow-root;
+    margin-bottom: 30px;                     /* [ĐO] ảnh bắt đầu 30px dưới text box */
+  }
+
+  .section-head__title {
+    float: left;
+    font-family: var(--font-sans);
+    font-size: 38px;                         /* [FIGMA] Jost 38                */
+    line-height: 55px;                       /* [FIGMA] Hug 55                 */
+    letter-spacing: 0.18em;                  /* [FIGMA] 18%                    */
+    text-transform: uppercase;
+  }
+
+  /* Figma: nhóm dọc 73 × 25 = chữ 20 + gap 1 + vạch 4. */
+  .section-head__link {
+    float: right;
+    white-space: nowrap;
+    margin-top: 15px;                        /* [ĐO] căn giữa theo hàng 55     */
+    padding-bottom: 1px;                     /* [FIGMA] gap 1                  */
+    font-size: 14px;                         /* [ĐO] chữ hoa cao 10 = Jost 14  */
+    line-height: 20px;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    border-bottom: 4px solid var(--color-rule);   /* [ĐO] vạch 4px #D2D2D2 */
+  }
+
+  /* Bề rộng Hug ghi thẳng: float tự co thì Chrome làm tròn lên thêm 1px. */
+  .section-head__link--shop { width: 73px; }   /* [FIGMA] Hug 73 × 25 */
+  .section-head__link--read { width: 71px; }   /* [ĐO] vạch x 1599 → 1669 */
+
+  .section-head__link:hover { border-bottom-color: var(--text-primary); }
+
+  @media (width < 768px) {
+    .section-head__title { font-size: 26px; line-height: 40px; letter-spacing: 0.12em; }
+    .section-head__link { margin-top: 8px; }
+  }
+}

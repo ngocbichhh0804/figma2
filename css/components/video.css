@@ -1,0 +1,46 @@
+/* Ảnh video full khung + nút play tròn ở giữa. */
+@layer components {
+  .video { position: relative; }
+
+  .video__img {
+    width: 100%;
+    height: 782px;                           /* [MẪU] Video.png 1920 × 782     */
+    object-fit: cover;
+  }
+
+  .video__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 272px;                            /* [ĐO] Ø272                      */
+    height: 272px;
+    margin: -136px 0 0 -136px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  /* Tam giác play 43 × 51 [ĐO], đỉnh trái ở (119, 111) trong hình tròn. */
+  .video__play::before {
+    content: "";
+    position: absolute;
+    top: 111px;                              /* [ĐO] y 3902                    */
+    left: 119px;                             /* [ĐO] x 943                     */
+    width: 43px;
+    height: 51px;
+    background-color: var(--text-primary);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  .video__play:hover { transform: scale(1.05); }
+
+  @media (width < 1200px) {
+    .video__img { height: 520px; }
+    .video__play { width: 160px; height: 160px; margin: -80px 0 0 -80px; }
+    .video__play::before { top: 55px; left: 66px; width: 32px; height: 50px; }
+  }
+
+  @media (width < 768px) {
+    .video__img { height: 360px; }
+  }
+}

@@ -1,0 +1,21 @@
+/* Thiết lập mặc định cho thẻ và nhịp chữ. Cố ý không dùng class ở đây. */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 20px;                 /* [FIGMA] text box 14px "Hug 20" */
+    color: var(--text-primary);
+    background-color: var(--surface-page);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-regular);
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  ul, ol { list-style: none; padding: 0; }
+
+  address { font-style: normal; }
+}

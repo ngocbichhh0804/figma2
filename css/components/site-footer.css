@@ -1,0 +1,100 @@
+/* Footer nền đen: logo + 4 cột, vạch chia, dòng bản quyền. */
+@layer components {
+  .site-footer {
+    color: var(--text-inverse);
+    background-color: var(--surface-inverse);   /* [ĐO] #111111, từ y 5556 */
+  }
+
+  .site-footer__top {
+    display: flow-root;
+    height: 416px;                           /* [ĐO] 5556 → vạch ở y 5972      */
+    padding-top: 200px;                      /* [ĐO] chữ hoa bắt đầu y 5761    */
+  }
+
+  .site-footer__logo {
+    float: left;
+    width: 332px;                            /* [ĐO] cột tiếp theo ở x 582     */
+    position: relative;
+    left: -1px;                              /* [ĐO] chữ m bắt đầu x 250       */
+    font-family: var(--font-logo);
+    font-size: 38px;                         /* [FIGMA] giống logo header      */
+    font-style: italic;
+    line-height: 50px;
+  }
+
+  .site-footer__col { float: left; }
+  .site-footer__col--nav { width: 267px; }     /* [ĐO] cột kế ở x 849  */
+  .site-footer__col--help { width: 314px; }    /* [ĐO] cột kế ở x 1163 */
+  .site-footer__col--contact {
+    width: 400px;                            /* [ĐO] ≤ 420: cột social float phải */
+    letter-spacing: 0.02em;                  /* [ĐO] dòng 1 rộng 158           */
+  }
+
+  .site-footer__col--social { float: right; margin-right: -1px; }   /* [ĐO] chữ bắt đầu x 1583 */
+
+  .site-footer__col li { padding-bottom: 4px; }   /* [ĐO] bước dòng 24 */
+
+  .site-footer__link,
+  .site-footer__contact {
+    position: relative;
+    display: inline-block;                   /* vạch gạch chân chỉ dài bằng chữ */
+    line-height: 20px;
+  }
+
+  .site-footer__link {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+  }
+
+  .site-footer__link--current { font-weight: var(--weight-medium); }   /* [ĐO] ABOUT đậm 500 */
+
+  .site-footer__contact { font-weight: var(--weight-medium); }   /* [ĐO] nét dày hơn chữ thường */
+
+  /* Gạch chân giống header: nét 2 hàng pixel 25 % / 50 % màu chữ [ĐO], cách
+     mép trên dòng 16px (y 5772–5773, 5792–5793, 5836–5837, 6019–6020). */
+  .site-footer__link:hover::after,
+  .site-footer__link--current::after,
+  .site-footer__contact::after {
+    content: "";
+    position: absolute;
+    top: 16px;                               /* [ĐO]                          */
+    left: 0;
+    right: 0;                                /* [ĐO] vạch dài hết text box     */
+    height: 2px;                             /* [ĐO]                          */
+    background-image: linear-gradient(
+      color-mix(in srgb, currentColor 25%, transparent) 50%,   /* [ĐO] */
+      color-mix(in srgb, currentColor 50%, transparent) 50%    /* [ĐO] */
+    );
+  }
+
+  .site-footer__col--contact p { padding-bottom: 4px; }   /* [ĐO] */
+
+  .site-footer__copy {
+    font-size: 14px;                         /* [ĐO] chữ rộng 342              */
+    letter-spacing: 0.02em;                  /* [ĐO]                          */
+    line-height: 80px;                       /* [ĐO] 5973 → 6053               */
+    text-align: center;
+    border-top: 1px solid var(--color-rule-dark);   /* [ĐO] #414141 */
+  }
+
+  @media (width < 1200px) {
+    .site-footer__top { height: auto; padding: 96px 32px 64px; }
+    .site-footer__logo { float: none; display: block; width: auto; margin-bottom: 32px; }
+    .site-footer__col--nav,
+    .site-footer__col--help,
+    .site-footer__col--contact { width: 33%; }
+    .site-footer__col--social { clear: left; padding-top: 32px; }
+  }
+
+  @media (width < 768px) {
+    .site-footer__top { padding-inline: 16px; }
+    .site-footer__col,
+    .site-footer__col--nav,
+    .site-footer__col--help,
+    .site-footer__col--contact { float: none; width: auto; padding-bottom: 24px; }
+    .site-footer__col--social { padding-top: 0; }
+    .site-footer__copy { line-height: 24px; padding: 28px 16px; }
+  }
+}
