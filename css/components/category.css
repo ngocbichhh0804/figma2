@@ -6,7 +6,14 @@
     color: var(--text-inverse);
   }
 
+  /* Women.png / Men.png in sẵn chữ + nút ở giữa ảnh (chờ bản export sạch), nên
+     chữ HTML phải co giãn đúng theo ảnh mới đè khít. --u = 1px Figma sau khi
+     co: theo bề rộng ô (100cqi / 950), nhưng không nhỏ hơn 0.75px để chữ còn
+     đọc được — khi đó ảnh cao 798 × --u, phủ kín ô và cắt bớt hai bên. */
   .category__item {
+    --u: max(100cqi / 950, 0.75px);          /* [ĐO] khung 1920 → ô 950 → 1px */
+
+    container-type: inline-size;
     position: relative;
     float: left;
     width: calc(50% - 10px);                 /* [ĐO] 950 = (1920 − 20) / 2     */
@@ -16,40 +23,31 @@
 
   .category__img {
     width: 100%;
-    height: 798px;                           /* [MẪU] Women.png 950 × 798      */
+    height: calc(798 * var(--u));            /* [MẪU] Women.png 950 × 798      */
     object-fit: cover;
   }
 
   .category__body {
     position: absolute;
-    top: 319px;                              /* [ĐO] chữ hoa bắt đầu y 1281    */
+    top: calc(319 * var(--u));               /* [ĐO] chữ hoa bắt đầu y 1281    */
     left: 0;
     right: 0;
     text-align: center;
   }
 
   .category__title {
-    margin-bottom: 19px;                     /* [ĐO] nút ở y 1387              */
+    margin-bottom: calc(19 * var(--u));      /* [ĐO] nút ở y 1387              */
     font-kerning: none;                      /* [ĐO] Figma dựng Bodoni Moda không kerning */
-    font-size: 90px;                         /* [FIGMA] Bodoni Moda 90         */
+    font-size: calc(90 * var(--u));          /* [FIGMA] Bodoni Moda 90         */
     line-height: var(--leading-display);     /* [FIGMA] 114% → Hug 103         */
     letter-spacing: var(--tracking-display); /* [FIGMA] 6%                     */
     padding-left: var(--tracking-display);   /* bù khoảng chữ thừa sau ký tự cuối */
     text-transform: uppercase;
   }
 
-  @media (width < 1200px) {
-    .category__img { height: 600px; }
-    .category__body { top: 200px; }
-    .category__title { font-size: 72px; }
-  }
-
   @media (width < 768px) {
     .category__item,
     .category__item--men { float: none; width: auto; }
     .category__item + .category__item { margin-top: 20px; }
-    .category__img { height: 480px; }
-    .category__body { top: 150px; }
-    .category__title { font-size: 64px; margin-bottom: 20px; }
   }
 }

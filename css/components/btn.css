@@ -1,12 +1,14 @@
 /* Nút nền trắng chữ hoa — dùng ở hero và hai ô danh mục. */
 @layer components {
+  /* Mọi số đo nhân với --u (mặc định 1px). Khối chứa nút đè lên chữ in sẵn
+     trong ảnh (category) đặt --u theo tỉ lệ ảnh để nút co giãn cùng ảnh. */
   .btn {
     display: inline-block;
-    height: 40px;                            /* [FIGMA] Hug 40                 */
-    padding: 10px 50px;                      /* [FIGMA] padding 10 / 50 / 10 / 50 */
+    height: calc(40 * var(--u, 1px));        /* [FIGMA] Hug 40                 */
+    padding: calc(10 * var(--u, 1px)) calc(50 * var(--u, 1px));   /* [FIGMA] 10 / 50 / 10 / 50 */
     font-family: var(--font-sans);
-    font-size: 14px;                         /* [FIGMA] Jost 14                */
-    line-height: 20px;                       /* [FIGMA] text box cao 20        */
+    font-size: calc(14 * var(--u, 1px));     /* [FIGMA] Jost 14                */
+    line-height: calc(20 * var(--u, 1px));   /* [FIGMA] text box cao 20        */
     letter-spacing: var(--tracking-caps);    /* [FIGMA] 10%                    */
     text-transform: uppercase;
     white-space: nowrap;
@@ -18,9 +20,9 @@
 
   /* Bề rộng Hug đọc từ panel Figma = chữ + 2 × 50. Ghi thẳng để nút không
      rộng thêm 1–2px do Chrome đo chữ khác Figma (chữ vẫn bắt đầu ở padding 50). */
-  .btn--collection { width: 243px; }         /* [FIGMA] 243 × 40, chữ 143 × 20 */
-  .btn--women { width: 208px; }              /* [FIGMA] 208 × 40, chữ 108 × 20 */
-  .btn--men { width: 181px; }                /* [FIGMA] 181 × 40, chữ 81 × 20  */
+  .btn--collection { width: calc(243 * var(--u, 1px)); }   /* [FIGMA] 243 × 40, chữ 143 × 20 */
+  .btn--women { width: calc(208 * var(--u, 1px)); }        /* [FIGMA] 208 × 40, chữ 108 × 20 */
+  .btn--men { width: calc(181 * var(--u, 1px)); }          /* [FIGMA] 181 × 40, chữ 81 × 20  */
 
   .btn:hover {
     color: var(--text-inverse);

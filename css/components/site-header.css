@@ -84,9 +84,25 @@
     .site-header__account { left: auto; right: 32px; }
   }
 
+  /* Điện thoại: nav và cụm tài khoản thành một hàng ngang; Login/Search chỉ
+     còn icon (chữ vẫn đọc được bằng trình đọc màn hình). */
   @media (width < 768px) {
-    .site-header__logo { top: 16px; left: 16px; font-size: 30px; }
-    .site-header__nav { top: 72px; left: 16px; }
-    .site-header__account { top: 72px; right: 16px; }
+    .site-header { height: auto; }
+    .site-header__logo { top: 16px; left: 16px; font-size: 30px; line-height: 40px; }
+    .site-header__nav { top: 72px; left: 16px; right: 16px; }
+    .site-header__account { top: 26px; right: 16px; }
+    .site-header__list { font-size: 0; }
+    .site-header__list li { display: inline-block; padding-bottom: 0; }
+    .site-header__nav li + li { margin-left: 20px; }
+    .site-header__account li + li { margin-left: 14px; }
+    .site-header__tool { height: 20px; padding-left: 18px; vertical-align: top; }
+    .site-header__label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
   }
 }

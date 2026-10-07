@@ -8,7 +8,7 @@
 
   .subscribe__title {
     font-kerning: none;                      /* [ĐO] Figma dựng Bodoni Moda không kerning */
-    font-size: 102px;                        /* [ĐO] chữ hoa cao 80–81         */
+    font-size: clamp(32px, 5.3125vw, 102px); /* [ĐO] chữ hoa cao 80–81 ở khung 1920 (102 / 1920 = 5.3125vw) */
     line-height: var(--leading-display);     /* [ƯỚC] 114% như các tiêu đề Bodoni khác */
     letter-spacing: var(--tracking-display); /* [ƯỚC] 6% như các tiêu đề Bodoni khác */
     padding-left: 0.04em;                    /* [ĐO] bù khoảng chữ thừa sau ký tự cuối */
@@ -63,11 +63,11 @@
 
   @media (width < 1200px) {
     .subscribe { height: auto; padding: 120px 0; }
-    .subscribe__title { font-size: 72px; }
   }
 
   @media (width < 768px) {
-    .subscribe__title { font-size: 44px; }
+    .subscribe { padding: 80px 0; }
+    .subscribe__input { font-size: 16px; }
     .subscribe__input,
     .subscribe__btn { float: none; width: 100%; }
     .subscribe__btn { margin-top: 8px; }

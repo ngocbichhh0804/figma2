@@ -8,7 +8,7 @@
 
   .reviews__title {
     font-kerning: none;                      /* [ĐO] Figma dựng Bodoni Moda không kerning */
-    font-size: 102px;                        /* [ĐO] chữ hoa cao 80–81         */
+    font-size: clamp(32px, 5.3125vw, 102px); /* [ĐO] chữ hoa cao 80–81 ở khung 1920 (102 / 1920 = 5.3125vw) */
     line-height: var(--leading-display);     /* [ƯỚC] 114% như các tiêu đề Bodoni khác */
     letter-spacing: var(--tracking-display); /* [ƯỚC] 6% như các tiêu đề Bodoni khác */
     text-transform: uppercase;
@@ -67,12 +67,13 @@
 
   @media (width < 1200px) {
     .reviews { height: auto; padding-bottom: 120px; }
-    .reviews__title { font-size: 72px; }
     .reviews__quote { font-size: 18px; line-height: 32px; }
   }
 
   @media (width < 768px) {
-    .reviews__title { font-size: 44px; }
+    .reviews { padding-top: 64px; padding-bottom: 80px; }
+    .reviews__list { margin-top: 32px; }
+    .reviews__dots { margin-top: 0; }
     .reviews__item,
     .reviews__item + .reviews__item { float: none; width: auto; margin: 0 0 40px; }
   }

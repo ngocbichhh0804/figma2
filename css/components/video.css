@@ -1,10 +1,18 @@
 /* Ảnh video full khung + nút play tròn ở giữa. */
 @layer components {
-  .video { position: relative; }
+  /* Video.png in sẵn nút play (chờ bản export sạch), nên nút HTML co giãn
+     đúng theo ảnh: --u = 1px Figma sau khi co, theo bề rộng (100cqi / 1920),
+     không nhỏ hơn 0.46px (ảnh cao ~360) — khi đó ảnh phủ kín và cắt hai bên. */
+  .video {
+    --u: max(100cqi / 1920, 0.46px);         /* [ĐO] khung 1920 → 1px          */
+
+    container-type: inline-size;
+    position: relative;
+  }
 
   .video__img {
     width: 100%;
-    height: 782px;                           /* [MẪU] Video.png 1920 × 782     */
+    height: calc(782 * var(--u));            /* [MẪU] Video.png 1920 × 782     */
     object-fit: cover;
   }
 
@@ -12,9 +20,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 272px;                            /* [ĐO] Ø272                      */
-    height: 272px;
-    margin: -136px 0 0 -136px;
+    width: calc(272 * var(--u));             /* [ĐO] Ø272                      */
+    height: calc(272 * var(--u));
+    margin: calc(-136 * var(--u)) 0 0 calc(-136 * var(--u));
     border-radius: 50%;
     background-color: var(--color-white);
     transition: transform var(--duration-fast) var(--ease-out);
@@ -24,23 +32,13 @@
   .video__play::before {
     content: "";
     position: absolute;
-    top: 111px;                              /* [ĐO] y 3902                    */
-    left: 119px;                             /* [ĐO] x 943                     */
-    width: 43px;
-    height: 51px;
+    top: calc(111 * var(--u));               /* [ĐO] y 3902                    */
+    left: calc(119 * var(--u));              /* [ĐO] x 943                     */
+    width: calc(43 * var(--u));
+    height: calc(51 * var(--u));
     background-color: var(--text-primary);
     clip-path: polygon(0 0, 100% 50%, 0 100%);
   }
 
   .video__play:hover { transform: scale(1.05); }
-
-  @media (width < 1200px) {
-    .video__img { height: 520px; }
-    .video__play { width: 160px; height: 160px; margin: -80px 0 0 -80px; }
-    .video__play::before { top: 55px; left: 66px; width: 32px; height: 50px; }
-  }
-
-  @media (width < 768px) {
-    .video__img { height: 360px; }
-  }
 }

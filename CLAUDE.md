@@ -55,6 +55,9 @@ docs/comparison/<slug>/  <slug>-figma.png, -build, -side-by-side, -overlay, -dif
   61/88 vùng khớp 0px (còn lại 1–2px ở mép chữ). Overlay: `dev/home-overlay.html`.
   Thông số: `docs/comparison/home/spec.md`, vùng đo: `docs/comparison/home/regions.txt`.
   Ảnh `Women.png`, `Men.png`, `Video.png` đang dính chữ/nút, chờ bản export sạch.
+  Responsive: ≥ 1484px giữ đúng số Figma; < 1684px mũi tên sản phẩm xuống dưới thẻ;
+  < 1200px tablet; < 768px điện thoại (1 cột). Women/Men và Video co giãn bằng biến `--u`
+  (container query `cqi`) để chữ/nút HTML luôn đè khít chữ in sẵn trong ảnh.
 
 ## Font
 

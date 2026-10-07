@@ -57,22 +57,28 @@
 
   .products__arrow:hover { color: var(--text-primary); }
 
+  /* Lề hai bên hẹp hơn mũi tên (91px) → dời cặp mũi tên xuống giữa, dưới thẻ. */
   @media (width < 1684px) {
-    .products__arrow { top: 120px; width: 60px; }
-    .products__arrow--prev { left: auto; right: 112px; }
-    .products__arrow--next { right: 32px; }
+    .products__arrow { top: auto; bottom: 24px; }
+    .products__arrow--prev { left: calc(50% - 111px); }
+    .products__arrow--next { right: calc(50% - 111px); }
   }
 
   @media (width < 1200px) {
-    .products { height: auto; padding-top: 120px; padding-bottom: 40px; }
+    .products { height: auto; padding-top: 120px; padding-bottom: 120px; }
     .products__img { height: auto; aspect-ratio: 466 / 630; }
-    .products__name, .products__price { font-size: 16px; }
+    .products__name,
+    .products__price { float: none; padding-right: 0; padding-left: 10px; font-size: 16px; line-height: 24px; }
+    .products__price { margin-top: 0; }
   }
 
   @media (width < 768px) {
-    .products { padding-top: 80px; }
-    .products__arrow { display: none; }
+    .products { padding-top: 80px; padding-bottom: 104px; }
+    .products__arrow { bottom: 24px; width: 64px; height: 46px; }
+    .products__arrow svg { width: 100%; height: 100%; }
+    .products__arrow--prev { left: calc(50% - 80px); }
+    .products__arrow--next { right: calc(50% - 80px); }
     .products__card,
-    .products__card + .products__card { float: none; width: auto; margin-left: 0; }
+    .products__card + .products__card { float: none; width: auto; margin-left: 0; padding-bottom: 32px; }
   }
 }
