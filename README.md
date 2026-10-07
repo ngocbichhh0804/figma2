@@ -15,11 +15,9 @@ bước build, **không JavaScript**.
 `dev/<trang>-overlay.html` (bốn chế độ Code only / Overlay 50% / Figma only /
 Slider — không JavaScript, nút là radio input đọc bằng `:has()`).
 
-Trên màn Retina nên bật thêm ô **"Ảnh code 1x"**: iframe vẽ chữ nét ở 2x còn ảnh
-Figma 1x bị phóng nhòe, nên nét mảnh (Bodoni) trông đậm hơn dù thật ra bằng
-nhau. Ô này thay iframe bằng ảnh chụp bản code 1x (`<slug>-build.png`) để hai
-bên cùng độ phân giải. Ảnh là bản chụp: sửa CSS xong chạy lại
-`compare.py … --out docs/comparison/<slug> <slug>`.
+"Code only" hiện ảnh chụp bản code 1x (`<slug>-build.png`) thay cho trang chạy
+trực tiếp, để so độ đậm nét chữ cùng độ phân giải với ảnh Figma trên màn Retina.
+Ảnh là bản chụp: sửa CSS xong chạy lại `compare.py … --out docs/comparison/<slug> <slug>`.
 
 ## Không flexbox, không grid
 

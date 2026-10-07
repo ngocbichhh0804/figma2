@@ -40,15 +40,13 @@
 
   .stage { position: relative; width: var(--frame-w); margin: 0 auto; }
   .stage iframe { display: block; width: var(--frame-w); height: var(--frame-h); border: 0; }
-
-  /* "Ảnh code 1x": thay iframe bằng ảnh chụp bản code ở 1x (compare.py --out
-     xuất ra <slug>-build.png). Trên màn Retina, iframe vẽ chữ nét ở 2x còn ảnh
-     Figma 1x bị phóng nhòe, nên nét mảnh trông khác độ đậm. So hai ảnh cùng
-     1x thì cả hai nhòe như nhau, đánh giá đúng độ đậm/khử răng cưa.
+  /* "Code only" hiện ảnh chụp bản code 1x (compare.py --out xuất ra
+     <slug>-build.png) thay cho iframe: trên màn Retina iframe vẽ chữ nét ở 2x,
+     ảnh 1x nhòe giống ảnh Figma nên đánh giá đúng độ đậm nét chữ.
      Ảnh là bản chụp: sửa CSS xong phải chạy lại compare.py --out. */
   .stage__snap { display: none; position: absolute; inset-block-start: 0; inset-inline-start: 0; width: var(--frame-w); max-width: none; }
-  body:has(#use-snap:checked) .stage iframe { visibility: hidden; }
-  body:has(#use-snap:checked) .stage__snap { display: block; }
+  body:has(#m-build:checked) .stage iframe { visibility: hidden; }
+  body:has(#m-build:checked) .stage__snap { display: block; }
   .ov {
     position: absolute; inset-block-start: 0; inset-inline-start: 0;
     width: var(--frame-w); pointer-events: none; opacity: .5;
@@ -97,7 +95,6 @@
     <label><input type="radio" name="mode" id="m-50" checked /> Overlay 50%</label>
     <label><input type="radio" name="mode" id="m-figma" /> Figma only</label>
     <label><input type="radio" name="mode" id="m-slide" /> Slider</label>
-    <label title="So ảnh chụp bản code 1x với ảnh Figma 1x — đúng độ đậm trên màn Retina"><input type="checkbox" id="use-snap" /> Ảnh code 1x</label>
     <nav aria-label="Pages">
       <a href="home-overlay.html" aria-current="page">Modish</a>
     </nav>
